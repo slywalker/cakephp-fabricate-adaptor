@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="CakePHP_CodeSniffer">
+    <description>The coding standard for CakePHP.</description>
+    <file>./src</file>
+    <file>./tests</file>
+    <arg name="report" value="full"/>
+    <arg name="report" value="diff"/>
+    <arg value="p"/>
+    <rule ref="./vendor/cakephp/cakephp-codesniffer/CakePHP"/>
+</ruleset>

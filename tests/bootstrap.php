@@ -7,9 +7,9 @@
  * installed as a dependency of an application.
  */
 
+use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
-use Cake\Cache\Cache;
 use Cake\Datasource\ConnectionManager;
 
 $findRoot = function ($root) {
