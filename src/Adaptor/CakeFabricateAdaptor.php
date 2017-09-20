@@ -21,19 +21,19 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
      * Filter primary key option.
      * Default setting is false that primary key sets by Fabricate.
      */
-    const OPTION_FILTER_KEY = "filter_key";
+    const OPTION_FILTER_KEY = 'filter_key';
     /**
      * Validate option.
      * Default setting is false.
      * If you want to validate each entity, set true.
      */
-    const OPTION_VALIDATE = "validate";
+    const OPTION_VALIDATE = 'validate';
     /**
      * Application rles option.
      * Default setting is false.
      * If you want to check rules for each entity, set true.
      */
-    const OPTION_CHECK_RULES = "checkRules";
+    const OPTION_CHECK_RULES = 'checkRules';
 
     /** option values */
     private $options;
