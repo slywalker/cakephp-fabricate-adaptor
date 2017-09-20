@@ -7,12 +7,10 @@
  */
 namespace CakeFabricate\Adaptor;
 
+use Cake\ORM\Association;
+use Cake\ORM\TableRegistry;
 use Fabricate\Adaptor\AbstractFabricateAdaptor;
 use Fabricate\Model\FabricateModel;
-
-use Cake\Utility\Inflector;
-use Cake\ORM\TableRegistry;
-use Cake\ORM\Association;
 
 /**
  * Fabricate CakePHP Model Adaptor
@@ -48,14 +46,14 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
     {
         $defaults = [
             self::OPTION_FILTER_KEY => false,
-            self::OPTION_VALIDATE   => false,
-            self::OPTION_CHECK_RULES      => false,
+            self::OPTION_VALIDATE => false,
+            self::OPTION_CHECK_RULES => false,
         ];
         $this->options = array_merge($defaults, $options);
     }
 
     /**
-     * @inherit
+     * {@inheritdoc}
      */
     public function getModel($modelName)
     {
@@ -93,11 +91,12 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
                     break;
             }
         }
+
         return $model;
     }
 
     /**
-     * @inherit
+     * {@inheritdoc}
      */
     public function create($modelName, $attributes, $recordCount)
     {
@@ -116,13 +115,15 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
                     return false;
                 }
             }
+
             return true;
         });
+
         return $entities;
     }
 
     /**
-     * @inherit
+     * {@inheritdoc}
      */
     public function build($modelName, $data)
     {
@@ -131,12 +132,14 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
             'validate' => $this->options[self::OPTION_VALIDATE],
             'accessibleFields' => ['*' => true]
         ]);
+
         return $entity;
     }
 
     /**
      * Filter key
      *
+     * @param \Cake\ORM\Table $table table object
      * @param string $name field name
      * @return true if $name is primary key, otherwise false
      */
@@ -149,6 +152,7 @@ class CakeFabricateAdaptor extends AbstractFabricateAdaptor
         if (!is_array($primaryKey)) {
             $primaryKey = [$primaryKey];
         }
+
         return in_array($name, $primaryKey);
     }
 }

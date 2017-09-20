@@ -8,7 +8,8 @@
         "sizuhiko/fabricate": "~2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",
+        "cakephp/cakephp-codesniffer": "^3.0"
     },
     "autoload": {
         "psr-4": {
